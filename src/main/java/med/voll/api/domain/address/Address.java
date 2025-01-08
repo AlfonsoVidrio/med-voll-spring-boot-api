@@ -24,12 +24,31 @@ public class Address {
         this.complement = address.complement();
     }
 
-    public Address updateAddress(AddressData address) {
+    /*public Address updateAddress(AddressData address) {
         this.street = address.street();
         this.district = address.district();
         this.city = address.city();
         this.number = address.number();
         this.complement = address.complement();
+        return this;
+    }*/
+
+    public Address updateAddress(AddressUpdateData address) {
+        if (address.street() != null) {
+            this.street = address.street();
+        }
+        if (address.district() != null) {
+            this.district = address.district();
+        }
+        if (address.city() != null) {
+            this.city = address.city();
+        }
+        if (address.number() != null) {
+            this.number = address.number();
+        }
+        if (address.complement() != null) {
+            this.complement = address.complement();
+        }
         return this;
     }
 }

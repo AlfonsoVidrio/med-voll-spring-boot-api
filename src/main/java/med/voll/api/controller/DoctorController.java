@@ -59,7 +59,7 @@ public class DoctorController {
 
     private DoctorResponseData createDoctorResponseData(Doctor doctor) {
         return new DoctorResponseData(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getPhone(), doctor.getDocument(),
-                new AddressData(doctor.getAddress().getStreet(), doctor.getAddress().getNumber(), doctor.getAddress().getComplement(), doctor.getAddress().getDistrict(), doctor.getAddress().getCity())
+                new AddressData(doctor.getAddress().getStreet(),doctor.getAddress().getDistrict(),doctor.getAddress().getCity(), doctor.getAddress().getNumber(), doctor.getAddress().getComplement())
         );
     }
 

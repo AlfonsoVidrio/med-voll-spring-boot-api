@@ -1,7 +1,7 @@
 package med.voll.api.controller;
 
-import med.voll.api.domain.users.User;
-import med.voll.api.domain.users.UserAuthenticationData;
+import med.voll.api.domain.user.User;
+import med.voll.api.domain.user.UserAuthenticationData;
 import med.voll.api.infra.security.jwtTokenData;
 import med.voll.api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
