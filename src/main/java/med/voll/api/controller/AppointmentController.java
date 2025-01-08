@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.voll.api.domain.appointment.AppointmentBooking;
@@ -14,12 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/appointments")
+@SecurityRequirement(name = "bearer-key")
 public class AppointmentController {
     @Autowired
     private AppointmentBooking appointmentBooking;
 
     @PostMapping
     @Transactional
+
     public ResponseEntity<?> reserve(@RequestBody @Valid AppointmentData appointmentData) {
         var detailsAppointment = appointmentBooking.reserve(appointmentData);
         return ResponseEntity.ok(detailsAppointment);
