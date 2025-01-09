@@ -1,63 +1,61 @@
-# API Clínica Voll
+# Clínica Voll API
 
-## Índice
+## Table of Contents
 
-1. [Descripción del Proyecto](#descripción-del-proyecto)
-2. [Capturas](#capturas)
-3. [Tecnologías Utilizadas](#tecnologías-utilizadas)
-4. [Requisitos](#requisitos)
-5. [Configuración de Variables de Entorno](#configuración-de-variables-de-entorno)
-    - [Variables necesarias](#variables-necesarias)
-    - [Ejemplo de configuración](#ejemplo-de-configuración)
-6. [Crear la base de datos](#crear-la-base-de-datos)
-7. [Autor](#autor)
+1. [Project Description](#project-description)
+2. [Screenshots](#screenshots)
+3. [Technologies Used](#technologies-used)
+4. [Requirements](#requirements)
+5. [Environment Variables Setup](#environment-variables-setup)
+    - [Required Variables](#required-variables)
+    - [Configuration Example](#configuration-example)
+6. [Create the Database](#create-the-database)
+7. [Author](#author)
 
-## Descripción del Proyecto
+## Project Description
 
-API REST desarrollada con **Spring Boot** para gestionar doctores, pacientes, consultas médicas y autenticación con JWT en la **Clínica Voll**. La aplicación permite realizar diversas operaciones para gestionar la información de la clínica, como registrar, actualizar, eliminar y listar doctores y pacientes, además de registrar consultas médicas. También incluye un sistema de autenticación con JWT para proteger las rutas.
+REST API developed with **Spring Boot** for managing doctors, patients, medical consultations, and JWT authentication at **Clínica Voll**. The application allows various operations for managing clinic information, such as registering, updating, deleting, and listing doctors and patients, as well as registering medical consultations. It also includes a JWT authentication system to protect the routes.
 
-### Capturas
+### Screenshots
 
 <div>
-  <img src="https://github.com/user-attachments/assets/e335a713-2af2-4eeb-bbd0-547a71647d53" alt="Interfaz principal" style="height: 350px;">
+  <img src="https://github.com/user-attachments/assets/e335a713-2af2-4eeb-bbd0-547a71647d53" alt="Main interface" style="height: 350px;">
 </div>
 
+## Technologies Used
 
-## Tecnologías Utilizadas
+- **Flyway**: Database versioning.
+- **Java 17**: Programming language.
+- **Lombok**: Reduces repetitive code.
+- **MySQL**: Database for storing data.
+- **Spring Boot**: Framework for building the REST API.
+- **Spring Boot Security**: Security management and JWT authentication.
+- **Spring Boot Starter Test**: Unit tests for the API.
+- **Spring Security Test**: Security tests for the API.
+- **Spring Validation**: Input and data validation.
+- **Springdoc**: API documentation generation with Swagger.
 
-- **Flyway**: Versionado de la base de datos.
-- **Java 17**: Lenguaje de programación.
-- **Lombok**: Reducción de código repetitivo.
-- **MySQL**: Base de datos para almacenar datos.
-- **Spring Boot**: Framework para construir la API REST.
-- **Spring Boot Security**: Gestión de seguridad y autenticación con JWT.
-- **Spring Boot Starter Test**: Pruebas unitarias de la API.
-- **Spring Security Test**: Pruebas de seguridad de la API.
-- **Spring Validation**: Validación de entradas y datos.
-- **Springdoc**: Generación de documentación de la API con Swagger.
+## Requirements
 
+- **Java 17** or higher.
+- **MySQL** as the database system.
+- **Maven** as the dependency manager.
 
-## Requisitos
+## Environment Variables Setup
 
-- **Java 17** o superior.
-- **MySQL** como sistema de base de datos.
-- **Maven** como gestor de dependencias.
+For the application to work correctly, you need to configure the following environment variables in your operating system. These variables are used to establish the connection to the MySQL database and define certain important parameters for the application's operation.
 
-## Configuración de Variables de Entorno
+### Required Variables
 
-Para que la aplicación funcione correctamente, es necesario configurar las siguientes variables de entorno en tu sistema operativo. Estas variables se utilizan para establecer la conexión con la base de datos MySQL y definir ciertos parámetros importantes para el funcionamiento de la aplicación.
+- **`DB_HOST`**: The address or hostname of the MySQL database (e.g., `localhost` or an IP address).
+- **`DB_NAME`**: The name of the MySQL database to be used (e.g., `clinica_voll`).
+- **`DB_USERNAME`**: The username with permissions to access the database.
+- **`DB_PASSWORD`**: The password associated with the database user.
+- **`JWT_SECRET`**: The secret used for signing the JWT.
 
-### Variables necesarias
+### Configuration Example
 
-- **`DB_HOST`**: Dirección o nombre del host donde se encuentra la base de datos MySQL (por ejemplo, `localhost` o una dirección IP).
-- **`DB_NAME`**: Nombre de la base de datos MySQL que se utilizará (por ejemplo, `clinica_voll`).
-- **`DB_USERNAME`**: Nombre de usuario con permisos para acceder a la base de datos.
-- **`DB_PASSWORD`**: Contraseña asociada al usuario de la base de datos.
-- **`JWT_SECRET`**: Secreto utilizado para la firma del JWT.
-
-### Ejemplo de configuración
-
-Debes agregar las siguientes variables de entorno a tu sistema, reemplazando los valores según tu configuración:
+You should add the following environment variables to your system, replacing the values as per your configuration:
 
 ```properties
 spring.application.name=api
@@ -74,20 +72,20 @@ server.error.include-stacktrace=never
 
 api.security.secret=${JWT_SECRET}
 ```
-## Crear la base de datos
+## Create the Database
 
-La aplicación espera que exista una base de datos llamada **clinica_voll**. Debes crear esta base de datos en tu instancia de MySQL antes de ejecutar la aplicación.
+The application expects a database called **clinica_voll** to exist. You should create this database in your MySQL instance before running the application.
 
-Accede a MySQL usando tu cliente preferido, como la terminal o una herramienta gráfica (por ejemplo, MySQL Workbench).
+Access MySQL using your preferred client, such as the terminal or a graphical tool (e.g., MySQL Workbench).
 
-Ejecuta el siguiente comando SQL para crear la base de datos:
+Run the following SQL command to create the database:
 
 ```sql
   CREATE DATABASE clinica_voll;
 ```
-## Autor
 
-Desarrollado por **Alfonso Manuel Vidrio Lizaola**.
+## Author
+
+Developed by **Alfonso Manuel Vidrio Lizaola**.
 
 - **LinkedIn**: [Alfonso Manuel Vidrio Lizaola](https://www.linkedin.com/in/alfonsomanuelvidriolizaola/)
-
